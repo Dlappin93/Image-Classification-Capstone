@@ -1,0 +1,16 @@
+
+
+
+conda create -n tfcpu python=3.9.13
+
+conda activate tfcpu
+
+conda install numpy pandas matplotlib jupyter jupyterlab pillow seaborn
+
+conda install scikit-learn
+
+pip install visualkeras
+
+conda install -c conda-forge tensorflow
+
+ipython kernel install --name "tfcpu" --user
