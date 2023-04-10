@@ -1,7 +1,11 @@
 Image Classification Capstone
 David Lappin
 BrainStation 4/9/2023
+Github: https://github.com/Dlappin93/Image-Classification-Capstone
 
+
+Data source: https://www.kaggle.com/datasets/virtualdvid/oregon-wildlife
+Data also saved on drive: https://drive.google.com/drive/folders/1iK2RXazUha0UO7RJidgo96oT1_WHnnAj?usp=share_link
 
 Included in Repository:
 ______________________
@@ -34,7 +38,6 @@ ________________
 
 	Notebook '6.0_Prediction_Playground'
 	- Provides a simple space to load in completed models and predict on new data.
-
 
 
 
@@ -77,11 +80,12 @@ Provides and empty sample of the folder architechture used in the notebook. The 
 	data split.
 
 
-
 models - 
 
 The models folder contains our finalized models that can be saved. These models can be loaded into Notebook 6 without running any additional
 	code, and you can use them to predict on new data if desired.
+
+
 
 
 
