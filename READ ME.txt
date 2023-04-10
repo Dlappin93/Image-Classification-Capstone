@@ -1,5 +1,52 @@
+Image Classification Capstone
+David Lappin
+BrainStation 4/9/2023
 
 
+Included in Repository:
+______________________
+
+1.0 Notebooks
+2.0 Environment
+3.0 Supplementary Folders/Files
+
+
+1.0 - Notebooks:
+________________
+
+	Notebook '1.0_EDA_and_Exploration':
+	 - Includes preliminary data exploration and EDA.Prepares data for modelling and ensures compatibility with Keras CNN models.
+ 		Important code to split data into new directories. Note that the file structure will change from the 'FileArchitecture' 
+		example folder provided once the data is split.  
+		
+	Notebook '2.0_Baseline_Model':
+	- Creates a baseline CNN model in keras. Includes evaluation and identifies next steps needed.
+
+	Notebook '3.0_Regularization_Strategies':
+	- Adjust the baseline and include regularization and normalization strategies such as batch normalization, drop out,
+		and data augmentation. Explore fixes to potential data leakage problems due to data collection method (web-scraping)
+
+	Notebook '4.0_Regularization_Strategies_Adjusted'
+	- Make some improvements to the prior model by increasing complexity of the convolutions and the dense layers.
+
+	Notebook '5.0_Transfer_Learning_MobileNetV2'
+	- Explore transfer learning with MobileNetV2 pretrained model with the ImageNet weights. Fine tune model to data set and evalutate
+
+	Notebook '6.0_Prediction_Playground'
+	- Provides a simple space to load in completed models and predict on new data.
+
+
+
+
+2.0 - Environment:
+__________________
+
+- The file 'Lap_Capstone_Env.yml' can be saved in your working directory and re-created using the line of code below:
+
+conda env create -f Lap_Capstone_Env.yml
+
+
+- If for some reason the file does not load properly, you can re-create the required environment by following the steps below:
 
 conda create -n tfcpu python=3.9.13
 
@@ -13,4 +60,33 @@ pip install visualkeras
 
 conda install -c conda-forge tensorflow
 
+
+- Make sure to create a new ipython kernel if you are planning to run in Juypter notebooks
+
 ipython kernel install --name "tfcpu" --user
+
+
+3.0 - Supplementary Folders/Files:
+__________________________________
+
+FolderArchitechture - 
+
+Provides and empty sample of the folder architechture used in the notebook. The workflow in the notebooks is defined by relative paths
+	to the data. If you deviate from the folder structure you will have to adjust the relative paths in the notebooks. Be aware that
+	the first notebook creates new directories and moves files such that the data folder will include additional directories for the 
+	data split.
+
+
+
+models - 
+
+The models folder contains our finalized models that can be saved. These models can be loaded into Notebook 6 without running any additional
+	code, and you can use them to predict on new data if desired.
+
+
+
+
+
+
+
+
