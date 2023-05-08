@@ -9,7 +9,7 @@ from PIL import Image
 class_names = ['class1', 'class2', 'class3', ..., 'class20']
 
 # Load the pre-trained Keras model
-model = tf.keras.models.load_model('your_model.h5')
+model = tf.keras.models.load_model('appmodel.h5')
 
 # Function to preprocess the image
 def preprocess_image(image):
