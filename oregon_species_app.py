@@ -4,9 +4,9 @@ import numpy as np
 from PIL import Image
 from tensorflow.keras.applications.resnet50 import preprocess_input
 
-class_labels = ['bald_eagle', 'black_bear', 'bobcat', 'canada_lynx', 'columbian_black-tailed_deer', 'cougar',
-                'coyote', 'deer', 'elk', 'gray_fox', 'gray_wolf', 'mountain_beaver', 'nutria', 'raccoon', 'raven',
-                'red_fox', 'ringtail', 'sea_lions', 'seals', 'virginia_opossum']
+class_labels = ['Bald Eagle', 'Black Bear', 'Bobcat', 'Canada Lynx', 'Columbian Black-tailed Deer', 'Cougar',
+                'Coyote', 'Deer', 'Elk', 'Gray Fox', 'Gray Wolf', 'Mountain Beaver', 'Nutria', 'Raccoon', 'Raven',
+                'Red Fox', 'Ringtail', 'Sea Lions', 'Seals', 'Virginia Opossum']
 
 # Load the model
 model = tf.keras.models.load_model('appmodel.h5')
@@ -28,8 +28,20 @@ def predict_image(image):
     confidence = np.max(predictions[0]) * 100
     return predicted_class, confidence
 
-
+#Define App Text and Styling
 def main():
+
+    st.markdown(
+        """
+        <style>
+        body {
+            background-color: #F5F5F5;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
 
     # Add title and purpose section
     st.title("Oregon Wildlife Classification Using Transfer Learning with Fine-Tuned MobileNetV2 Pretrained Model")
@@ -39,6 +51,7 @@ def main():
     st.markdown("Created by: David Lappin")
     st.markdown("Date: May 10, 2023")
     st.markdown("---")
+
 
     st.subheader("Project and Application Info:")
     st.markdown("This application performs image classification on 20 different species classes from Oregon. "
@@ -55,6 +68,22 @@ def main():
     st.markdown("\n\n")
     st.markdown("\n\n")
 
+    st.markdown("### Species Classes")
+    st.markdown("Note that while you can use any image in the app, the model is only trained to recognize the following classes:")
+    table_html = "<table>"
+    for i in range(0, len(class_labels), 5):
+        row = class_labels[i:i + 5]
+        table_html += "<tr>"
+        for species in row:
+            table_html += f"<td>{species}</td>"
+        table_html += "</tr>"
+    table_html += "</table>"
+
+    st.markdown(table_html, unsafe_allow_html=True)
+
+    st.markdown("\n\n")
+    st.markdown("\n\n")
+    st.markdown("---")
     
     st.subheader("Try It Out!:")
     st.markdown("\n\n")
