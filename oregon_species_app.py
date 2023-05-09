@@ -66,7 +66,6 @@ def main():
                 "can be found on my github: https://github.com/Dlappin93/Image-Classification-Capstone")
     st.markdown("---")
     st.markdown("\n\n")
-    st.markdown("\n\n")
 
     st.markdown("### Species Classes")
     st.markdown("Note that while you can use any image in the app, the model is only trained to recognize the following classes:")
